@@ -1,0 +1,1 @@
+In this project, build a simple todo list including adding, editing, deleting in react.
