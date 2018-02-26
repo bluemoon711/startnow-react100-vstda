@@ -11,7 +11,7 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.editItem = this.editItem.bind(this);
-   // this.saveItem = this.saveItem.bind(this);  
+    // this.saveItem = this.saveItem.bind(this);  
     this.deleteItem = this.deleteItem.bind(this);
     this.updateTodo = this.updateTodo.bind(this);
   }
@@ -55,17 +55,17 @@ class App extends Component {
     });
 
     todo.editEnabled = true;
-    
-    this.setState ({
-      items : copyOfItems
-     });
-  }; 
+
+    this.setState({
+      items: copyOfItems
+    });
+  };
 
   deleteItem(e) {
     e.preventDefault();
     //make a copy of this.state.items
     var copyOfItems = [...this.state.items];
-    
+
     //find the id inside of items findIndex()
     var i = copyOfItems.findIndex(item => {
       return item.id == e.target.name;
@@ -81,7 +81,7 @@ class App extends Component {
   updateTodo(item) {
     //make a copy of this.state.items
     var copyOfItems = [...this.state.items];
-    
+
     //find the id inside of items findIndex()
     var index = copyOfItems.findIndex(i => {
       return i.id == item.id;
@@ -103,7 +103,7 @@ class App extends Component {
           <div className="row">
             <div className="col-4">
               <div className="card">
-                <div className="card-header">
+                <div className="card-header bg-info">
                   Add New Todo
                   </div>
                 <div className="card-body">
@@ -136,33 +136,32 @@ class App extends Component {
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-10">
-                <div className="card">
-                  <div className="card-header">
-                    View Todos
+            <div className="col-8">
+              <div className="card">
+                <div className="card-header bg-success">
+                  View Todos
                   </div>
-                  <div className="card-body">
-                    <div className="list-group">
-                      <ul className="thisList">
-                        {this.state.items.map(item => {
-                          if (item.editEnabled) {
-                            return (
-                              <EditTodo key={item.id} item={item} name={item.id} changeTodo={this.updateTodo} />
-                            )
-                          } else {
-                            return (<li key={item.id} className="success">
-                              {item.text}
-                              <a href="#" name={item.id} className="edit-todo" onClick={this.editItem}>Edit</a>
-                              <a href="#" name={item.id} className="delete-todo" onClick={this.deleteItem}>Delete</a>
-                            </li>);
-                          }
-                        })}
-                      </ul>
-                    </div>
+                <div className="card-body">
+                  <div className="list-group">
+                    <ul className="thisList">
+                      {this.state.items.map(item => {
+                        if (item.editEnabled) {
+                          return (
+                            <EditTodo key={item.id} item={item} name={item.id} changeTodo={this.updateTodo} />
+                          )
+                        } else {
+                          return (<li key={item.id} className="success">
+                            {item.text}
+                            <a href="#" name={item.id} className="edit-todo" onClick={this.editItem}>Edit</a>
+                            <a href="#" name={item.id} className="delete-todo" onClick={this.deleteItem}>Delete</a>
+                          </li>);
+                        }
+                      })}
+                    </ul>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>

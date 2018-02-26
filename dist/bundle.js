@@ -22517,7 +22517,7 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
               { className: 'card' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'card-header' },
+                { className: 'card-header bg-danger' },
                 'Add New Todo'
               ),
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -22596,49 +22596,45 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'row' },
+            { className: 'col-8' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'div',
-              { className: 'col-10' },
+              { className: 'card' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'card' },
+                { className: 'card-header bg-success' },
+                'View Todos'
+              ),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'card-body' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                   'div',
-                  { className: 'card-header' },
-                  'View Todos'
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                  'div',
-                  { className: 'card-body' },
+                  { className: 'list-group' },
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'list-group' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                      'ul',
-                      { className: 'thisList' },
-                      this.state.items.map(item => {
-                        if (item.editEnabled) {
-                          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__edit_todo__["a" /* default */], { key: item.id, item: item, name: item.id, changeTodo: this.updateTodo });
-                        } else {
-                          return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'li',
-                            { key: item.id, className: 'success' },
-                            item.text,
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                              'a',
-                              { href: '#', name: item.id, className: 'edit-todo', onClick: this.editItem },
-                              'Edit'
-                            ),
-                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                              'a',
-                              { href: '#', name: item.id, className: 'delete-todo', onClick: this.deleteItem },
-                              'Delete'
-                            )
-                          );
-                        }
-                      })
-                    )
+                    'ul',
+                    { className: 'thisList' },
+                    this.state.items.map(item => {
+                      if (item.editEnabled) {
+                        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__edit_todo__["a" /* default */], { key: item.id, item: item, name: item.id, changeTodo: this.updateTodo });
+                      } else {
+                        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                          'li',
+                          { key: item.id, className: 'success' },
+                          item.text,
+                          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'a',
+                            { href: '#', name: item.id, className: 'edit-todo', onClick: this.editItem },
+                            'Edit'
+                          ),
+                          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'a',
+                            { href: '#', name: item.id, className: 'delete-todo', onClick: this.deleteItem },
+                            'Delete'
+                          )
+                        );
+                      }
+                    })
                   )
                 )
               )
